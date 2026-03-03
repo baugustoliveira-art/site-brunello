@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arquitetura Patrimonial para Médicos - Brunello Capital">
+    <title>Brunello Capital - Arquitetura Patrimonial</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --brunello: #6b2737;
+            --gold: #c9a961;
+            --off-white: #fafaf8;
+            --black: #1a1a1a;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: var(--black);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-hover-fill {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        .btn-hover-fill::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: var(--brunello);
+            transform: translateY(100%);
+            transition: transform 0.5s ease-out;
+            z-index: 0;
+        }
+        .btn-hover-fill:hover::before {
+            transform: translateY(0);
+        }
+        .btn-hover-fill:hover {
+            color: var(--off-white) !important;
+        }
+        .btn-content {
+            position: relative;
+            z-index: 10;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        @media (max-width: 768px) {
+            html {
+                scroll-snap-type: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fixed top-8 left-8 md:left-16 lg:left-24 z-40">
+        <div class="flex items-center gap-3">
+            <div class="h-8 w-8 border opacity-20" style="border-color: var(--brunello);">
+                <div class="h-full w-full border scale-75 origin-top-left" style="border-color: var(--brunello);"></div>
+            </div>
+            <span class="text-xs tracking-[0.3em] uppercase opacity-40 inter">Brunello Capital</span>
+        </div>
+    </div>
+
+    <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-2">
+        <span class="text-[9px] tracking-[0.4em] uppercase opacity-20 inter">Deslize</span>
+        <div class="h-8 w-px opacity-20 animate-pulse-slow" style="background-color: var(--brunello);"></div>
+    </div>
+
+    <!-- SEÇÃO 01: HERO -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24 relative">
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]">
+            <div class="h-full w-full" style="background-image: linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px); background-size: 80px 80px;"></div>
+        </div>
+        <div class="max-w-5xl w-full relative z-10 fade-in-up">
+            <div class="mb-16 flex items-center gap-4">
+                <div class="h-px w-20 opacity-30" style="background-color: var(--brunello);"></div>
+                <div class="h-2 w-2 rotate-45 border opacity-40" style="border-color: var(--brunello);"></div>
+            </div>
+            <p class="text-sm tracking-[0.3em] uppercase mb-8 opacity-50 inter">Relatório Estratégico 2026</p>
+            <h1 class="mb-16 leading-[1.1] tracking-tight playfair" style="font-size: clamp(3rem, 8vw, 6.5rem);">Arquitetura Patrimonial para Médicos</h1>
+            <div class="max-w-2xl">
+                <div class="h-px w-12 mb-8" style="background-color: var(--brunello);"></div>
+                <p class="text-xl md:text-2xl leading-relaxed opacity-70 inter">Uma abordagem estruturada para preservar e multiplicar o patrimônio da sua família através de gerações.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 02: INSIGHT -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-7xl w-full grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="order-2 md:order-1">
+                <p class="text-lg md:text-xl leading-relaxed opacity-75 inter">Médicos de alta renda enfrentam um desafio único: enquanto dominam a arte de salvar vidas, poucos possuem uma estratégia formal para proteger o patrimônio construído ao longo de décadas de dedicação. A complexidade tributária, a volatilidade dos mercados e os riscos inerentes à profissão exigem uma abordagem sofisticada e personalizada.</p>
+            </div>
+            <div class="order-1 md:order-2 relative">
+                <div class="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[var(--brunello)] to-transparent opacity-20"></div>
+                <div class="pl-0 md:pl-12">
+                    <div class="mb-6 h-0.5 w-16" style="background-color: var(--brunello);"></div>
+                    <h2 class="leading-[1.2] tracking-tight playfair" style="font-size: clamp(2rem, 5vw, 3.5rem); color: var(--brunello);">Riqueza sem estrutura é vulnerabilidade.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 03: DATA - 100 anos -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-4xl w-full text-center">
+            <div class="flex justify-center mb-12">
+                <div class="relative">
+                    <div class="h-16 w-16 border opacity-10 rotate-45" style="border-color: var(--brunello);"></div>
+                    <div class="absolute inset-0 h-16 w-16 border opacity-10 rotate-45 scale-75" style="border-color: var(--brunello);"></div>
+                </div>
+            </div>
+            <div class="mb-8">
+                <div class="inline-block leading-none tracking-tighter playfair" style="font-size: clamp(6rem, 18vw, 12rem); color: var(--brunello); font-weight: 600;">100<span class="opacity-60" style="font-size: 0.4em; margin-left: 0.1em;">anos</span></div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="h-px w-20 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.3;"></div>
+                <p class="text-2xl md:text-3xl mb-6 leading-snug playfair">A expectativa de vida está se estendendo</p>
+                <p class="text-base md:text-lg opacity-60 leading-relaxed inter">Seu patrimônio precisa durar décadas além da aposentadoria. Uma arquitetura patrimonial bem estruturada garante segurança para você e as próximas gerações.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 04: DATA - 47% -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-4xl w-full text-center">
+            <div class="flex justify-center mb-12">
+                <div class="relative">
+                    <div class="h-16 w-16 border opacity-10 rotate-45" style="border-color: var(--brunello);"></div>
+                    <div class="absolute inset-0 h-16 w-16 border opacity-10 rotate-45 scale-75" style="border-color: var(--brunello);"></div>
+                </div>
+            </div>
+            <div class="mb-8">
+                <div class="inline-block leading-none tracking-tighter playfair" style="font-size: clamp(6rem, 18vw, 12rem); color: var(--brunello); font-weight: 600;">47%</div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="h-px w-20 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.3;"></div>
+                <p class="text-2xl md:text-3xl mb-6 leading-snug playfair">do patrimônio pode ser perdido sem planejamento sucessório</p>
+                <p class="text-base md:text-lg opacity-60 leading-relaxed inter">Impostos, custos legais e divisões não planejadas podem reduzir drasticamente o legado familiar. A prevenção é sempre mais eficiente que a remediação.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 05: MÉTODO -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-7xl w-full grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="order-2 md:order-1">
+                <p class="text-lg md:text-xl leading-relaxed opacity-75 inter">Nossa metodologia se baseia no conceito dos 4 Pilares Patrimoniais: uma estrutura integrada que equilibra proteção, crescimento, propósito e continuidade. Cada pilar é projetado para trabalhar em sinergia, criando uma fortaleza financeira resiliente a crises e preparada para oportunidades.</p>
+            </div>
+            <div class="order-1 md:order-2 relative">
+                <div class="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[var(--brunello)] to-transparent opacity-20"></div>
+                <div class="pl-0 md:pl-12">
+                    <div class="mb-6 h-0.5 w-16" style="background-color: var(--brunello);"></div>
+                    <h2 class="leading-[1.2] tracking-tight playfair" style="font-size: clamp(2rem, 5vw, 3.5rem); color: var(--brunello);">Arquitetura, não improviso.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 06: PILAR PROTEÇÃO -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-2xl w-full text-center">
+            <div class="mb-12 relative inline-block">
+                <div class="absolute inset-0 -m-8 border opacity-5" style="border-color: var(--brunello);"></div>
+                <div class="p-8 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brunello); opacity: 0.8;">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+            </div>
+            <h3 class="mb-8 leading-tight tracking-tight playfair" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--brunello);">Pilar da Proteção</h3>
+            <div class="h-px w-16 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.2;"></div>
+            <p class="text-lg md:text-xl leading-relaxed opacity-70 max-w-xl mx-auto inter">Reserva de emergência, seguros personalizados e estruturas legais que blindam seu patrimônio contra riscos profissionais, processos e imprevistos.</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 07: PILAR CRESCIMENTO -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-2xl w-full text-center">
+            <div class="mb-12 relative inline-block">
+                <div class="absolute inset-0 -m-8 border opacity-5" style="border-color: var(--brunello);"></div>
+                <div class="p-8 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brunello); opacity: 0.8;">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+            <h3 class="mb-8 leading-tight tracking-tight playfair" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--brunello);">Pilar do Crescimento</h3>
+            <div class="h-px w-16 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.2;"></div>
+            <p class="text-lg md:text-xl leading-relaxed opacity-70 max-w-xl mx-auto inter">Estratégias de investimento sofisticadas e diversificadas, alinhadas ao seu perfil e objetivos de longo prazo, com foco em eficiência tributária.</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 08: PILAR PROPÓSITO -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-2xl w-full text-center">
+            <div class="mb-12 relative inline-block">
+                <div class="absolute inset-0 -m-8 border opacity-5" style="border-color: var(--brunello);"></div>
+                <div class="p-8 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brunello); opacity: 0.8;">
+                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                    </svg>
+                </div>
+            </div>
+            <h3 class="mb-8 leading-tight tracking-tight playfair" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--brunello);">Pilar do Propósito</h3>
+            <div class="h-px w-16 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.2;"></div>
+            <p class="text-lg md:text-xl leading-relaxed opacity-70 max-w-xl mx-auto inter">Capital destinado a realizar sonhos, projetos pessoais e contribuir para causas que importam, mantendo qualidade de vida sem comprometer a segurança.</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 09: PILAR SUCESSÃO -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-2xl w-full text-center">
+            <div class="mb-12 relative inline-block">
+                <div class="absolute inset-0 -m-8 border opacity-5" style="border-color: var(--brunello);"></div>
+                <div class="p-8 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" style="color: var(--brunello); opacity: 0.8;">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+            </div>
+            <h3 class="mb-8 leading-tight tracking-tight playfair" style="font-size: clamp(2rem, 4vw, 3rem); color: var(--brunello);">Pilar da Sucessão</h3>
+            <div class="h-px w-16 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.2;"></div>
+            <p class="text-lg md:text-xl leading-relaxed opacity-70 max-w-xl mx-auto inter">Planejamento sucessório inteligente que garante a transferência eficiente do patrimônio, minimiza conflitos familiares e prepara a próxima geração.</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 10: DATA - 3x -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-4xl w-full text-center">
+            <div class="flex justify-center mb-12">
+                <div class="relative">
+                    <div class="h-16 w-16 border opacity-10 rotate-45" style="border-color: var(--brunello);"></div>
+                    <div class="absolute inset-0 h-16 w-16 border opacity-10 rotate-45 scale-75" style="border-color: var(--brunello);"></div>
+                </div>
+            </div>
+            <div class="mb-8">
+                <div class="inline-block leading-none tracking-tighter playfair" style="font-size: clamp(6rem, 18vw, 12rem); color: var(--brunello); font-weight: 600;">3x</div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="h-px w-20 mx-auto mb-8" style="background-color: var(--brunello); opacity: 0.3;"></div>
+                <p class="text-2xl md:text-3xl mb-6 leading-snug playfair">maior eficiência patrimonial com planejamento estruturado</p>
+                <p class="text-base md:text-lg opacity-60 leading-relaxed inter">Clientes que implementam uma arquitetura patrimonial completa alcançam resultados significativamente superiores em rentabilidade ajustada ao risco, proteção e eficiência tributária.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 11: EXCLUSIVIDADE -->
+    <section class="min-h-screen flex items-center justify-center px-8 md:px-16 lg:px-24">
+        <div class="max-w-7xl w-full grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="order-2 md:order-1">
+                <p class="text-lg md:text-xl leading-relaxed opacity-75 inter">Trabalhamos exclusivamente com médicos e profissionais da saúde de alta renda. Entendemos as particularidades da sua profissão, os desafios do setor e as oportunidades específicas disponíveis. Nosso atendimento é limitado, personalizado e discreto.</p>
+            </div>
+            <div class="order-1 md:order-2 relative">
+                <div class="absolute -left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[var(--brunello)] to-transparent opacity-20"></div>
+                <div class="pl-0 md:pl-12">
+                    <div class="mb-6 h-0.5 w-16" style="background-color: var(--brunello);"></div>
+                    <h2 class="leading-[1.2] tracking-tight playfair" style="font-size: clamp(2rem, 5vw, 3.5rem); color: var(--brunello);">Consultoria sob medida para quem valoriza excelência.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 12: CONVITE FINAL -->
+    <section class="min-h-screen flex flex-col md:flex-row overflow-hidden" style="background-color: var(--off-white);">
+        <div class="relative flex flex-col items-center justify-center px-12 py-16 md:w-[45%] md:min-h-screen" style="background-color: var(--off-white);">
+            <div class="absolute top-12 left-12 right-12">
+                <div class="flex items-center gap-2">
+                    <div class="h-px flex-1 opacity-20" style="background-color: var(--gold);"></div>
+                    <div class="w-1 h-1 rounded-full opacity-30" style="background-color: var(--gold);"></div>
+                    <div class="h-px flex-1 opacity-20" style="background-color: var(--gold);"></div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="relative mb-12">
+                    <div class="absolute inset-0 rounded-full blur-3xl opacity-20" style="background-color: var(--gold); width: 280px; height: 280px; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 0;"></div>
+                    <div class="relative z-10 flex items-center justify-center" style="width: 240px; height: 240px;">
+                        <!-- LOGO (substitui o SVG do "B") -->
+                        <img
+                            src="./logo-brunello.png"
+                            alt="Brunello Capital"
+                            class="max-w-[190px] h-auto"
+                            style="opacity: 0.95;"
+                        />
+                    </div>
+                </div>
+                <div class="text-center max-w-sm">
+                    <p class="mb-2 tracking-[0.3em] uppercase opacity-40 inter" style="font-size: 9px; color: var(--gold);">Arquitetura Patrimonial</p>
+                    <h3 class="leading-tight tracking-tight playfair" style="font-size: clamp(1.4rem, 2.8vw, 2rem); color: var(--brunello);">Para Quem Construiu<br>Algo Extraordinário</h3>
+                </div>
+            </div>
+            <div class="absolute bottom-12 left-12 right-12">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <div class="h-px w-12 opacity-15" style="background-color: var(--gold);"></div>
+                    <div class="w-1.5 h-1.5 rotate-45 opacity-20" style="background-color: var(--gold);"></div>
+                    <div class="h-px w-12 opacity-15" style="background-color: var(--gold);"></div>
+                </div>
+                <p class="text-center opacity-20 tracking-[0.4em] uppercase inter" style="font-size: 8px; color: var(--brunello);">Acesso Restrito · 2026</p>
+            </div>
+        </div>
+        
+        <div class="relative flex flex-col justify-between px-10 md:px-16 lg:px-20 py-14 md:w-[58%]" style="background-color: var(--off-white);">
+            <div class="flex items-center gap-4">
+                <div class="h-px flex-1 opacity-10" style="background-color: var(--brunello);"></div>
+                <span class="text-[9px] tracking-[0.45em] uppercase opacity-30 inter" style="color: var(--brunello);">Convite Particular</span>
+                <div class="h-px flex-1 opacity-10" style="background-color: var(--brunello);"></div>
+            </div>
+            <div class="flex flex-col justify-center flex-1 py-12 max-w-lg">
+                <p class="mb-3 opacity-40 tracking-[0.2em] uppercase inter" style="font-size: 0.7rem; color: var(--brunello);">Por que você está recebendo isso</p>
+                <h2 class="mb-8 leading-[1.15] tracking-tight playfair" style="font-size: clamp(2rem, 4.5vw, 3.2rem); color: #1a1a1a;">Você foi indicado porque alguém acredita que este processo pode fazer sentido para você.</h2>
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-px w-8 opacity-20" style="background-color: var(--brunello);"></div>
+                    <div class="h-1.5 w-1.5 rotate-45 opacity-30" style="background-color: var(--brunello);"></div>
+                    <div class="h-px w-8 opacity-20" style="background-color: var(--brunello);"></div>
+                </div>
+                <p class="mb-4 leading-relaxed opacity-55 inter" style="font-size: 0.95rem; color: #1a1a1a;">Esta não é uma oferta pública. É uma conversa reservada, conduzida com absoluta discrição, para profissionais que foram especificamente indicados por alguém de nossa confiança.</p>
+                <p class="mb-12 leading-relaxed opacity-55 inter" style="font-size: 0.95rem; color: #1a1a1a;">Se você chegou até aqui, é porque sua trajetória merece uma abordagem patrimonial à altura do que você construiu.</p>
+                <div class="mb-8">
+                    <button id="ctaButton" class="btn-hover-fill group relative w-full max-w-xs px-10 py-4 inter" style="border: 1px solid var(--brunello); color: var(--brunello); background-color: transparent; cursor: pointer;">
+                        <span class="btn-content tracking-[0.18em] text-[11px] uppercase flex items-center gap-3 justify-center">
+                            <span class="h-px w-4 transition-all duration-300 btn-line-left" style="background-color: var(--brunello); opacity: 0.5;"></span>
+                            Solicitar Conversa Estratégica
+                            <span class="h-px w-4 transition-all duration-300 btn-line-right" style="background-color: var(--brunello); opacity: 0.5;"></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="mt-1 h-1 w-1 rounded-full flex-shrink-0 opacity-30" style="background-color: var(--brunello);"></div>
+                    <p class="opacity-30 leading-relaxed inter" style="font-size: 0.72rem; color: #1a1a1a;">Todas as informações compartilhadas nesta conversa são estritamente confidenciais e protegidas por acordo de não divulgação. Atendemos um número limitado de novos clientes por ano.</p>
+                </div>
+            </div>
+            <div class="flex items-end justify-between">
+                <div>
+                    <p class="opacity-25 text-[9px] tracking-[0.3em] uppercase mb-0.5 inter" style="color: #1a1a1a;">Atendimento exclusivo</p>
+                    <p class="opacity-20 text-[9px] tracking-[0.25em] uppercase inter" style="color: #1a1a1a;">Por indicação</p>
+                </div>
+                <div class="flex flex-col items-end gap-1 opacity-10">
+                    <div class="h-px w-12" style="background-color: var(--brunello);"></div>
+                    <div class="h-px w-6" style="background-color: var(--brunello);"></div>
+                    <div class="h-px w-3" style="background-color: var(--brunello);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.getElementById('ctaButton');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', function() {
+                    window.open('https://wa.me/message/CD6D7OW6U6VNI1', '_blank');
+                });
+                const lineLeft = document.querySelector('.btn-line-left');
+                const lineRight = document.querySelector('.btn-line-right');
+                if (lineLeft && lineRight) {
+                    ctaButton.addEventListener('mouseenter', function() {
+                        lineLeft.style.backgroundColor = 'var(--off-white)';
+                        lineRight.style.backgroundColor = 'var(--off-white)';
+                    });
+                    ctaButton.addEventListener('mouseleave', function() {
+                        lineLeft.style.backgroundColor = 'var(--brunello)';
+                        lineRight.style.backgroundColor = 'var(--brunello)';
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
